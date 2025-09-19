@@ -1,0 +1,37 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Entorno virtual
+.venv/
+env/
+venv/
+
+# Archivos de base de datos locales
+db.sqlite3
+
+# Archivos de configuración local
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.DS_Store
+
+# Archivos de VSCode / IDE
+.vscode/
+.idea/
+
+# Archivos estáticos generados
+staticfiles/
+
+# Archivos de media (si quieres que no se suban las imágenes que subes desde admin)
+# Descomenta esta línea si prefieres mantener limpio el repo:
+# media/
+
+# Archivos de entorno
+*.env
