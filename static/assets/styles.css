@@ -1,0 +1,290 @@
+/* ======================
+   Fuente global y base
+====================== */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #121212;
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+/* ======================
+   Navbar
+====================== */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Botón toggler personalizado */
+.custom-toggler {
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0.5rem;
+}
+
+.toggler-icon {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+}
+
+.custom-toggler.active .toggler-icon:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.custom-toggler.active .toggler-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler.active .toggler-icon:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.custom-toggler:focus,
+.custom-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.custom-toggler:hover .toggler-icon {
+    background-color: #0dcaf0;
+    box-shadow: 0 0 6px rgba(13, 202, 240, 0.6);
+}
+
+/* ======================
+   Hero
+====================== */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('/static/assets/img/hero-bg.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ======================
+   Botones principales
+====================== */
+.btn-motos {
+    background-color: #0dcaf0 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-motos:hover {
+    background-color: #0bb1d3 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.btn-coches {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-coches:hover {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+    transform: translateY(-2px);
+}
+
+/* ======================
+   Secciones
+====================== */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid currentColor;
+    padding-left: 10px;
+}
+
+.section-title.text-warning {
+    color: #ff9800;
+    /* Motos */
+}
+
+.section-title.text-info {
+    color: #0dcaf0;
+    /* Coches */
+}
+
+/* ======================
+   Cards
+====================== */
+.post-card,
+.card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover,
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ======================
+   Contact Form
+====================== */
+.card.bg-dark {
+    border-radius: 1rem;
+    border: 1px solid #333;
+    color: #f1f1f1;
+}
+
+.card.bg-dark label {
+    color: #ddd;
+    font-weight: 500;
+}
+
+.card.bg-dark p {
+    color: #ccc !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+form input,
+form textarea {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #f1f1f1 !important;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa !important;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 0 6px rgba(13, 202, 240, 0.6) !important;
+}
+
+form button {
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+
+
+/* ======================
+   About Section
+====================== */
+.about-section {
+    background-color: #1c1c1c;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+}
+
+.about-section h1 {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.about-section p {
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-section .lead {
+    font-size: 1.2rem;
+    color: #eaeaea;
+}
+
+.avatar-wrapper img {
+    border: 4px solid #0dcaf0;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* ======================
+   Footer
+====================== */
+footer {
+    background-color: #181818;
+    border-top: 1px solid #222;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: #0dcaf0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0bb1d3;
+    text-decoration: underline;
+}

@@ -1,0 +1,64 @@
+{% extends "posts/base.html" %}
+{% block content %}
+
+<!-- Hero -->
+<section class="hero d-flex align-items-center">
+    <div class="container text-center text-white">
+        <h1 class="display-3 fw-bold mb-3">Bienvenido a Mi Blog</h1>
+        <p class="lead mb-4">Pasión por coches y motos, compartida contigo</p>
+        <a href="{% url 'posts:category' 'motos' %}" class="btn btn-motos me-2">Explorar Motos</a>
+        <a href="{% url 'posts:category' 'coches' %}" class="btn btn-coches">Explorar Coches</a>
+    </div>
+</section>
+
+<!-- Motos -->
+<section class="section-bg-dark py-5">
+    <div class="container">
+        <h2 class="section-title text-warning">Motos</h2>
+        <div class="row g-4">
+            {% for post in motos %}
+            <div class="col-md-4">
+                <div class="card post-card h-100 shadow">
+                    {% if post.cover %}
+                    <img src="{{ post.cover.url }}" class="card-img-top" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <a href="{{ post.get_absolute_url }}" class="btn btn-sm btn-warning mt-auto">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'posts:category' 'motos' %}" class="btn btn-outline-warning">Ver más motos</a>
+        </div>
+    </div>
+</section>
+
+<!-- Coches -->
+<section class="section-bg-light py-5">
+    <div class="container">
+        <h2 class="section-title text-info">Coches</h2>
+        <div class="row g-4">
+            {% for post in coches %}
+            <div class="col-md-4">
+                <div class="card post-card h-100 shadow">
+                    {% if post.cover %}
+                    <img src="{{ post.cover.url }}" class="card-img-top" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <a href="{{ post.get_absolute_url }}" class="btn btn-sm btn-info mt-auto">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'posts:category' 'coches' %}" class="btn btn-outline-info">Ver más coches</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

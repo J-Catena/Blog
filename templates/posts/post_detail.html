@@ -1,0 +1,36 @@
+{% extends "posts/base.html" %}
+{% block content %}
+<div class="row g-4">
+    <!-- Contenido principal -->
+    <div class="col-lg-8">
+        <h1 class="mb-1">{{ post.title }}</h1>
+        <p class="text-muted">
+            Publicado el {{ post.created_at|date:"d/m/Y" }} en
+            <a href="{% url 'posts:category' post.category.slug %}">{{ post.category.name }}</a>
+        </p>
+
+        {% if post.cover %}
+        <img src="{{ post.cover.url }}" class="img-fluid rounded mb-4" alt="{{ post.title }}">
+        {% endif %}
+
+        <div class="fs-5 mb-4">
+            {{ post.content|linebreaks }}
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="d-flex gap-2">
+            <a href="{% url 'posts:category' post.category.slug %}" class="btn btn-outline-primary">
+                ⬅ Volver a {{ post.category.name }}
+            </a>
+            <a href="{% url 'posts:home' %}" class="btn btn-outline-secondary">
+                🏠 Inicio
+            </a>
+        </div>
+    </div>
+
+    <!-- Aside -->
+    <div class="col-lg-4">
+        {% include "posts/partials/aside.html" %}
+    </div>
+</div>
+{% endblock %}
