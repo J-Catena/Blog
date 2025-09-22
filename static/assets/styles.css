@@ -288,3 +288,98 @@ footer a:hover {
     color: #0bb1d3;
     text-decoration: underline;
 }
+
+
+/* Botón buscar (aside) */
+.btn-aside {
+    background-color: transparent;
+    border: 2px solid #0dcaf0;
+    color: #0dcaf0;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-aside:hover {
+    background-color: #0dcaf0;
+    color: #121212;
+}
+
+/* Enlaces aside */
+.aside-link {
+    color: #eaeaea;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+
+.aside-link:hover {
+    color: #0dcaf0;
+    text-decoration: underline;
+}
+
+/* ======================
+   Aside (categorías y últimos posts)
+====================== */
+
+
+.aside-card ul li a {
+    color: #eaeaea;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+
+.aside-card ul li a:hover {
+    color: #0dcaf0;
+    text-decoration: underline;
+}
+
+
+.aside-card ul li a::before {
+    content: "• ";
+    color: #0dcaf0;
+    font-weight: bold;
+}
+
+/* ======================
+   Títulos del aside (con subrayado animado)
+====================== */
+.aside-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #eaeaea;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.aside-card-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #0dcaf0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.aside-card-title:hover {
+    color: #0dcaf0;
+}
+
+.aside-card-title:hover::after {
+    transform: scaleX(1);
+}
+
+/* Contorno del aside */
+.blog-aside {
+    border: 1px solid #0dcaf0;             
+    border-radius: 20px;                   
+    box-shadow: 0 0 12px rgba(13,202,240,.4); 
+    margin-top: 6rem;                      
+    padding: 1.5rem;                      
+    background-color: #1a1a1a;             
+}

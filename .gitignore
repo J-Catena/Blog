@@ -29,9 +29,6 @@ db.sqlite3
 # Archivos estáticos generados
 staticfiles/
 
-# Archivos de media (si quieres que no se suban las imágenes que subes desde admin)
-# Descomenta esta línea si prefieres mantener limpio el repo:
-# media/
 
 # Archivos de entorno
 *.env

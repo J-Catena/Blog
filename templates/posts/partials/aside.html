@@ -1,22 +1,23 @@
 <!-- Buscador -->
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-        <h5 class="card-title mb-3">Buscar</h5>
+<div class="aside-card mb-4 shadow-sm">
+
+    <div class="aside-card-body">
+        <h5 class="aside-card-title mb-3">Buscar</h5>
         <form method="get" action="{% url 'posts:search' %}">
             <input type="text" name="q" class="form-control mb-2" placeholder="Escribe y pulsa Enter">
-            <button class="btn btn-outline-primary w-100" type="submit">Buscar</button>
+            <button class="btn-aside btn-outline-primary w-100" type="submit">Buscar</button>
         </form>
     </div>
 </div>
 
 <!-- Categorías -->
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-        <h5 class="card-title mb-3">Categorías</h5>
+<div class="aside-card mb-4 shadow-sm">
+    <div class="aside-card-body">
+        <h5 class="aside-card-title mb-3">Categorías</h5>
         <ul class="list-unstyled mb-0">
             {% for cat in sidebar_categories %}
             <li class="mb-2">
-                <a class="text-decoration-none" href="{% url 'posts:category' cat.slug %}">• {{ cat.name }}</a>
+                <a class="text-decoration-none" href="{% url 'posts:category' cat.slug %}"> {{ cat.name }}</a>
             </li>
             {% empty %}
             <li class="text-muted">Aún no hay categorías.</li>
@@ -26,9 +27,9 @@
 </div>
 
 <!-- Últimos posts -->
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-        <h5 class="card-title mb-3">Últimos posts</h5>
+<div class="aside-card mb-4 shadow-sm">
+    <div class="aside-card-body">
+        <h5 class="aside-card-title mb-3">Últimos posts</h5>
         <ul class="list-unstyled mb-0">
             {% for p in sidebar_latest_posts %}
             <li class="mb-3 d-flex align-items-center">
@@ -43,4 +44,5 @@
             {% endfor %}
         </ul>
     </div>
+
 </div>
