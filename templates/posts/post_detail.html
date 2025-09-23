@@ -3,33 +3,37 @@
 <div class="row g-4">
     <!-- Contenido principal -->
     <div class="col-lg-8">
-        <h1 class="mb-1">{{ post.title }}</h1>
-        <p class="text-muted">
-            Publicado el {{ post.created_at|date:"d/m/Y" }} en
-            <a href="{% url 'posts:category' post.category.slug %}">{{ post.category.name }}</a>
-        </p>
+        <article class="post-detail p-5">
+            <h1 class="post-title mb-2">{{ post.title }}</h1>
+            <p class="post-meta">
+                Publicado el {{ post.created_at|date:"d/m/Y" }} en
+                <a href="{% url 'posts:category' post.category.slug %}">{{ post.category.name }}</a>
+            </p>
 
-        {% if post.cover %}
-        <img src="{{ post.cover.url }}" class="img-fluid rounded mb-4" alt="{{ post.title }}">
-        {% endif %}
+            {% if post.cover %}
+            <div class="post-cover mb-4">
+                <img src="{{ post.cover.url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
+            </div>
+            {% endif %}
 
-        <div class="fs-5 mb-4">
-            {{ post.content|linebreaks }}
-        </div>
+            <div class="post-content">
+                {{ post.content|linebreaks }}
+            </div>
 
-        <!-- Botones de navegación -->
-        <div class="d-flex gap-2">
-            <a href="{% url 'posts:category' post.category.slug %}" class="btn btn-outline-primary">
-                ⬅ Volver a {{ post.category.name }}
-            </a>
-            <a href="{% url 'posts:home' %}" class="btn btn-outline-secondary">
-                🏠 Inicio
-            </a>
-        </div>
+            <!-- Botones de navegación -->
+            <div class="d-flex gap-2 mt-4">
+                <a href="{% url 'posts:category' post.category.slug %}" class="btn btn-motos btn-outline-primary">
+                    ⬅ Volver a {{ post.category.name }}
+                </a>
+                <a href="{% url 'posts:home' %}" class="btn btn-outline-secondary">
+                     Inicio
+                </a>
+            </div>
+        </article>
     </div>
 
     <!-- Aside -->
-    <div class="col-lg-4">
+    <div class="col-lg-4 p-5">
         {% include "posts/partials/aside.html" %}
     </div>
 </div>
