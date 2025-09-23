@@ -1,8 +1,9 @@
 {% extends "posts/base.html" %}
+{% block body_class %}inner-page{% endblock %}
 {% block content %}
 <div class="row g-4">
     <!-- Contenido principal -->
-    <div class="col-lg-8">
+    <div class="col-12 col-lg-8">
         <article class="post-detail p-5">
             <h1 class="post-title mb-2">{{ post.title }}</h1>
             <p class="post-meta">
@@ -26,14 +27,14 @@
                     ⬅ Volver a {{ post.category.name }}
                 </a>
                 <a href="{% url 'posts:home' %}" class="btn btn-outline-secondary">
-                     Inicio
+                    Inicio
                 </a>
             </div>
         </article>
     </div>
 
     <!-- Aside -->
-    <div class="col-lg-4 p-5">
+    <div class="col-12 col-lg-4 p-5">
         {% include "posts/partials/aside.html" %}
     </div>
 </div>

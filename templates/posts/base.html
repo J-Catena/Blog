@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mi Blog{% endblock %}</title>
 
     <!-- Google Fonts -->
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'assets/styles.css' %}">
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
         <div class="container">

@@ -435,3 +435,8 @@ footer a:hover {
     font-weight: 600;
     color: #fff;
 }
+
+body.inner-page .navbar {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}

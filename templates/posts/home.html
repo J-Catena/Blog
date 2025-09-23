@@ -17,7 +17,7 @@
         <h2 class="section-title text-warning">Motos</h2>
         <div class="row g-4">
             {% for post in motos %}
-            <div class="col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card post-card h-100 shadow">
                     {% if post.cover %}
                     <img src="{{ post.cover.url }}" class="card-img-top" alt="{{ post.title }}">
@@ -42,7 +42,7 @@
         <h2 class="section-title text-info">Coches</h2>
         <div class="row g-4">
             {% for post in coches %}
-            <div class="col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card post-card h-100 shadow">
                     {% if post.cover %}
                     <img src="{{ post.cover.url }}" class="card-img-top" alt="{{ post.title }}">
