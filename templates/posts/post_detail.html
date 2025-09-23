@@ -4,7 +4,7 @@
 <div class="row g-4">
     <!-- Contenido principal -->
     <div class="col-12 col-lg-8">
-        <article class="post-detail p-5">
+        <article class="post-detail p-3">
             <h1 class="post-title mb-2">{{ post.title }}</h1>
             <p class="post-meta">
                 Publicado el {{ post.created_at|date:"d/m/Y" }} en
@@ -24,7 +24,7 @@
             <!-- Botones de navegación -->
             <div class="d-flex gap-2 mt-4">
                 <a href="{% url 'posts:category' post.category.slug %}" class="btn btn-motos btn-outline-primary">
-                    ⬅ Volver a {{ post.category.name }}
+                    Volver a {{ post.category.name }}
                 </a>
                 <a href="{% url 'posts:home' %}" class="btn btn-outline-secondary">
                     Inicio
@@ -34,7 +34,7 @@
     </div>
 
     <!-- Aside -->
-    <div class="col-12 col-lg-4 p-5">
+    <div class="col-12 col-lg-4 p-3">
         {% include "posts/partials/aside.html" %}
     </div>
 </div>
