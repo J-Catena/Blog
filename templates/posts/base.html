@@ -5,7 +5,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Blog{% endblock %}</title>
+    <title>{% block title %}A todo Motor{% endblock %}</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'assets/img/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/apple-touch-icon.png' %}">
+
+    <!-- PNG favicons de varios tamaños -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon-16x16.png' %}">
+
+    <!-- Manifest (para Android/Chrome apps) -->
+    <link rel="manifest" href="{% static 'assets/img/site.webmanifest' %}">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="{% static 'assets/img/safari-pinned-tab.svg' %}" color="#000000">
+
+    <!-- Windows Tile -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/mstile-150x150.png' %}">
+
+    <!-- Theme color (para navegadores móviles) -->
+    <meta name="theme-color" content="#ffffff">
+
+
+
+    <!-- SEO -->
+    <meta name="description" content="A todo Motor: coches, motos y rutas que marcan la diferencia.">
+
+    <!-- Open Graph (para WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="A todo Motor">
+    <meta property="og:description" content="A todo Motor: coches, motos y rutas que marcan la diferencia.">
+    <meta property="og:image" content="https://jcatena.pythonanywhere.com/static/assets/logoblog.png">
+    <meta property="og:url" content="https://jcatena.pythonanywhere.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A todo Motor">
+    <meta name="twitter:description" content="A todo Motor: coches, motos y rutas que marcan la diferencia.">
+    <meta name="twitter:image" content="https://jcatena.pythonanywhere.com/static/assets/logoblog.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,11 +59,17 @@
     <link rel="stylesheet" href="{% static 'assets/styles.css' %}">
 </head>
 
+
+
 <body class="{% block body_class %}{% endblock %}">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'posts:home' %}">Mi Blog</a>
+            <!-- Logo + Nombre -->
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'posts:home' %}">
+                <img src="{% static 'assets/img/motorblog.png' %}" alt="A todo Motor" width="40" height="40"
+                    class="me-2">
+            </a>
             <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
